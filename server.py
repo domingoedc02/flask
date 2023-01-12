@@ -12,6 +12,7 @@ from sentence_splitter import SentenceSplitter, split_text_into_sentences
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
+port = 5000
 # Members API Route
 
 # Paraphrasing download
@@ -106,4 +107,5 @@ class Paraphrase(Resource):
 api.add_resource(Paragraph, '/summarize')
 api.add_resource(Paraphrase, '/paraphrase')
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run(host="0.0.0.0", port=port)
